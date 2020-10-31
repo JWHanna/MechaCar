@@ -1,0 +1,54 @@
+MPG Regression
+
+    Using the data provided (MechaCar_mpg.csv) I have run a multiple linear regression on mpg against all other variables to test the whether or not they have a significant impact on the vehicles MPG performance.
+
+Call:
+lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + 
+    ground.clearance + AWD, data = MechaCar)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.4701  -4.4994  -0.0692   5.4433  18.5849 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776 .  
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+    The analysis shows that Intercept, vehicle.length and ground.clearance provide a non-random amount of variance to mpg values, which can be seen via the p-values. 
+All other variables do not have a statistically significant impact.  The slopes of the statistically significant variables, vehicle.length(p-value: 2.60e-12) and ground.clearance(p-value: 5.21e-08), are 6.267 and 3.546 respectively, so the slope of the model is not considered to be zero. Additionally, the R-squared value of 0.6825 shows that about 70% of the variance is explained by this model. As a result, I can conclude that this model effectively predicts the mpg of the MechaCar prototypes.
+
+
+
+Suspension Coil Summary
+
+lot 1 variance: 1.15
+lot 2 variance: 10.13
+lot 3 variance: 220.10
+all lots variance: 76.2
+
+	The above data shows that the overall variance for the suspension coils does not exceed the specified 100 psi. However, lot 3 is producing sub-standard suspension coils with a variance of 220.10 psi.
+
+
+
+Suspension Coil t-test
+
+	The one sample t-test revealed that the suspension coil's pound-per-inch results are not statistically different from the mean population results of 1,500 pounds per inch. This can be determined from the p-value of 0.512, which means we must except the null hypothesis.
+
+
+Design Your Own Study
+
+	For a future study I would look at how MechaCar's reliability stacks up against the competition. With so much technology in modern vehicles, servicing and repairs are growing to be ever-more expensive. A car that is reliable will reduce running costs, and allow consumers to keep the same vehicle longer.
+	The study would ask the question of whether or not MechaCar's are statistically more reliable than the competition. The Null-Hypothesis would be that MechaCar's are not more reliable than the competition, and the Alternate-Hypothesis would be the opposite.
+	The data that should be collected for this study would be a historical look at service costs for MechaCars and the competitors to be used for a multiple linear regression.
+
